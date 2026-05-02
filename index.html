@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRGS</title>
+    <style>
+        body {
+            background-color: #121212;
+            color: #18FFFF;           
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: 'Trebuchet MS', sans-serif;
+        }
+        h1 {
+            border: 2px solid #18FFFF;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            font-weight: normal;
+        }
+    </style>
+</head>
+<body>
+
+    <h1 id="welcome-msg">Welcome to CRGS!</h1>
+
+    <script>
+        // Dicionário de traduções
+        const languages = {
+            'pt': 'Bem-vindo à CRGS!',
+            'en': 'Welcome to CRGS!',
+            'es': '¡Bienvenido a CRGS!',
+            'fr': 'Bienvenue sur CRGS!',
+            'zh': '欢迎来到 CRGS！'
+        };
+
+        // Detecta o idioma do navegador (ex: "pt-BR" vira "pt")
+        const userLang = navigator.language.split('-')[0];
+
+        // Seleciona o elemento do título
+        const titleElement = document.getElementById('welcome-msg');
+
+        // Altera o texto se o idioma existir no dicionário, senão mantém Inglês
+        if (languages[userLang]) {
+            titleElement.innerText = languages[userLang];
+        } else {
+            titleElement.innerText = languages['en'];
+        }
+    </script>
+</body>
+</html>
